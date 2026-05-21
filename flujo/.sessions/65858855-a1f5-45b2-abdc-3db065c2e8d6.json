@@ -1,0 +1,100 @@
+{
+  "session_id": "65858855-a1f5-45b2-abdc-3db065c2e8d6",
+  "config": {
+    "apiKey": "AIzaSyDcRs_vN0r4X0l-0asvFBBtKB5cqb_YdQk",
+    "model": "gemini-2.5-flash",
+    "provider": "gemini"
+  },
+  "sdd_state": {
+    "user_prompt": "",
+    "target_phase": "",
+    "product_brief": {
+      "product_name": "Mesa Andina",
+      "problem_statement": "El restaurante Sabor Andino enfrenta un caos en la gestión de reservas debido a su dependencia exclusiva de WhatsApp, lo que genera quejas de los clientes y una experiencia ineficiente. Esta situación dificulta la organización, especialmente durante los fines de semana y noches de alta demanda. Se necesita una solución moderna que optimice el proceso de reserva y mejore la satisfacción del cliente.",
+      "goals_and_objectives": {
+        "primary_objectives": [
+          "Reducir la carga operativa de gestión de reservas manuales en un 70% en los primeros 3 meses.",
+          "Incrementar la satisfacción del cliente con el proceso de reserva en un 25% según encuestas post-reserva.",
+          "Aumentar la eficiencia en la asignación de mesas y reducir los tiempos de espera en un 30% durante los fines de semana.",
+          "Lograr que el 80% de las reservas se realicen a través del sistema web en los primeros 6 meses."
+        ],
+        "success_metrics": [
+          "Porcentaje de reservas gestionadas a través del sistema web vs. WhatsApp.",
+          "Puntuación promedio de satisfacción del cliente con el proceso de reserva.",
+          "Tiempo promedio de gestión de una reserva por parte del personal.",
+          "Número de quejas relacionadas con el proceso de reserva.",
+          "Tasa de ocupación de mesas en horarios pico."
+        ]
+      },
+      "target_users": "Los usuarios principales son los clientes del restaurante Sabor Andino, quienes buscarán reservar mesas de forma fácil y rápida desde sus dispositivos móviles o computadoras. El personal administrativo del restaurante también será un usuario clave, utilizando el panel para gestionar y supervisar las reservas.",
+      "core_capabilities": [
+        "Sistema de reservas online para clientes con selección de fecha, hora y tipo de mesa.",
+        "Panel de administración para la gestión y supervisión de reservas por parte del personal.",
+        "Visualización en tiempo real de la disponibilidad de mesas.",
+        "Notificaciones automáticas de confirmación y recordatorio de reservas.",
+        "Página web atractiva con información esencial del restaurante.",
+        "Generación de estadísticas básicas sobre reservas y uso de mesas.",
+        "Diseño responsive y experiencia de usuario fluida y elegante."
+      ],
+      "scope": {
+        "in_scope": [
+          "Página principal con información del restaurante (fotos, horarios, ubicación).",
+          "Módulo de reserva para clientes (selección de fecha/hora, cantidad de personas, tipo de mesa, registro de datos).",
+          "Confirmación de reserva para clientes vía web y correo electrónico.",
+          "Actualización automática de la disponibilidad de mesas según reservas.",
+          "Configuración de diferentes tipos de mesas (para 2, familiar, VIP, terraza).",
+          "Panel administrativo para ver, aprobar/cancelar reservas y cambiar estados de mesas.",
+          "Sistema de notificaciones por correo electrónico y WhatsApp para recordatorios de reserva.",
+          "Diseño web moderno, elegante, responsive y con animaciones suaves.",
+          "Reportes básicos de estadísticas (horarios con más reservas, mesas más utilizadas, cantidad de clientes por día)."
+        ],
+        "out_of_scope": [
+          "Sistema de pedidos en línea para comida.",
+          "Funcionalidad de pagos directos desde la web.",
+          "Integración con sistemas de punto de venta (POS) existentes.",
+          "Gestión de inventario o menú del restaurante.",
+          "Programa de fidelización de clientes."
+        ],
+        "adjacent_expectations": "El sistema requerirá integración con un proveedor de servicios de correo electrónico transaccional (ej. SendGrid) y una API de WhatsApp para el envío de notificaciones y recordatorios de reserva."
+      },
+      "constraints": {
+        "technical_constraints": [
+          "El sistema debe ser una aplicación web moderna, accesible desde cualquier navegador y dispositivo (responsive).",
+          "El diseño debe ser elegante, intuitivo y ofrecer una experiencia de usuario fluida con animaciones suaves, similar a aplicaciones premium.",
+          "La arquitectura del sistema debe ser escalable para permitir la futura integración de funcionalidades como pedidos en línea y pagos.",
+          "La base de datos debe garantizar la consistencia y disponibilidad de la información de reservas en tiempo real."
+        ],
+        "business_rules": [
+          "Una mesa solo puede ser reservada por un cliente para una fecha y hora específica, impidiendo dobles reservas.",
+          "La disponibilidad de mesas debe reflejarse en tiempo real para los clientes y el personal.",
+          "Todas las reservas deben ser confirmadas por el sistema y pueden ser aprobadas o canceladas por el personal.",
+          "Las mesas se categorizan por capacidad y ubicación (ej. Mesa para 2 personas, Mesa familiar, Zona VIP, Terraza).",
+          "El personal tiene la autoridad para modificar el estado de cualquier mesa (ocupada, libre, reservada) desde el panel administrativo."
+        ],
+        "assumptions": [
+          "El restaurante proporcionará toda la información necesaria (fotos de alta calidad, horarios de atención, ubicación exacta, capacidad y distribución de mesas) de manera oportuna.",
+          "El personal del restaurante recibirá la capacitación adecuada para utilizar el panel administrativo de manera efectiva.",
+          "Existe una conexión a internet estable y confiable en el restaurante para el uso continuo del panel administrativo.",
+          "Los clientes tienen acceso a dispositivos con conexión a internet para realizar sus reservas."
+        ]
+      }
+    },
+    "requirements": null,
+    "class_diagram": null,
+    "traceability": null,
+    "product_created": false,
+    "requirements_created": false,
+    "design_created": false,
+    "pending_modification": null,
+    "impact_analysis": null,
+    "skip_impact": false,
+    "phase": "",
+    "mode": "",
+    "error": null,
+    "response": null
+  },
+  "pending_state": null,
+  "pending_new_model": null,
+  "pending_quality_report": null,
+  "pending_phase": null
+}

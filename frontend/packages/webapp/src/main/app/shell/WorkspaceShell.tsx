@@ -55,6 +55,9 @@ const FeedbackDialog = React.lazy(() =>
 const HelpGuideDialog = React.lazy(() =>
   import('../../shared/dialogs/HelpGuideDialog').then((m) => ({ default: m.HelpGuideDialog })),
 );
+const SDDPanel = React.lazy(() =>
+  import('../../features/sdd/SDDPanel').then((m) => ({ default: m.SDDPanel })),
+);
 // The keyboard toggle hook must be imported eagerly (it registers a global listener).
 // KeyboardShortcutsDialog is imported statically alongside the hook to avoid Vite's
 // mixed static/dynamic import warning (the module is already in this chunk).
@@ -169,6 +172,7 @@ export const WorkspaceShell: React.FC<WorkspaceShellProps> = ({
   const [isGitHubSidebarOpen, setIsGitHubSidebarOpen] = useState(false);
   const [isAssistantWorkspaceOpen, setIsAssistantWorkspaceOpen] = useState(false);
   const [userModelValidationByDiagramId, setUserModelValidationByDiagramId] = useState<Record<string, UserModelValidationRecord>>({});
+  const [isSDDOpen, setIsSDDOpen] = useState(false);
 
   // Derived values
   const activeUmlType = useMemo(
@@ -761,6 +765,7 @@ export const WorkspaceShell: React.FC<WorkspaceShellProps> = ({
         projectNameDraft={projectNameDraft}
         onProjectNameDraftChange={setProjectNameDraft}
         onProjectRename={handleProjectRename}
+        onOpenSDD={() => setIsSDDOpen(true)}
       />
 
       {/* Mobile hamburger button - visible only below md breakpoint */}
@@ -975,6 +980,15 @@ export const WorkspaceShell: React.FC<WorkspaceShellProps> = ({
         onOpenWmeRepository={() => openExternalUrl(besserWMERepositoryLink)}
         onOpenLibraryRepository={() => openExternalUrl(besserLibraryRepositoryLink)}
       />
+
+      <Suspense fallback={null}>
+        {isSDDOpen && (
+          <SDDPanel
+            isOpen={isSDDOpen}
+            onClose={() => setIsSDDOpen(false)}
+          />
+        )}
+      </Suspense>
 
       <CommandPalette
         open={isCommandPaletteOpen}

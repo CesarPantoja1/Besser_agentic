@@ -84,7 +84,11 @@ class SDDState(TypedDict):
 # LLM PROVIDER
 # ============================================================
 
-llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+try:
+    llm = ChatOpenAI(model="gpt-4o-mini", temperature=0.2)
+except Exception:
+    # Default to None, will be bound dynamically during session startup/config updates
+    llm = None
 
 
 # ============================================================

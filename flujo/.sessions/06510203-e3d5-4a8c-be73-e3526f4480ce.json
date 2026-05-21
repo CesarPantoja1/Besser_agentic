@@ -1,0 +1,97 @@
+{
+  "session_id": "06510203-e3d5-4a8c-be73-e3526f4480ce",
+  "config": {
+    "apiKey": "AIzaSyDcRs_vN0r4X0l-0asvFBBtKB5cqb_YdQk",
+    "model": "gemini-2.5-flash",
+    "provider": "gemini"
+  },
+  "sdd_state": {
+    "user_prompt": "",
+    "target_phase": "",
+    "product_brief": {
+      "product_name": "Mesa Andina",
+      "problem_statement": "El actual sistema de reservas por WhatsApp en Sabor Andino es caótico e ineficiente, generando quejas de los clientes y dificultades operativas para el personal. Los clientes necesitan una forma sencilla y rápida de reservar mesas, mientras que el restaurante requiere una gestión clara y en tiempo real de su disponibilidad.",
+      "goals_and_objectives": {
+        "primary_objectives": [
+          "Reducir el tiempo de gestión de reservas por parte del personal en un 50%.",
+          "Aumentar la satisfacción del cliente con el proceso de reserva en un 40%.",
+          "Incrementar la ocupación de mesas en horarios pico (fines de semana por la noche) en un 15%.",
+          "Mejorar la eficiencia en la asignación y seguimiento de mesas por parte del personal."
+        ],
+        "success_metrics": [
+          "Porcentaje de reservas realizadas a través del sistema web.",
+          "Tiempo promedio de gestión de una reserva por parte del personal.",
+          "Calificación promedio de encuestas de satisfacción del cliente sobre el proceso de reserva.",
+          "Número de quejas relacionadas con reservas.",
+          "Tasa de ocupación de mesas en fines de semana."
+        ]
+      },
+      "target_users": "Clientes del restaurante Sabor Andino que desean reservar mesas de forma digital (desde móvil o computadora). Personal administrativo del restaurante encargado de la gestión y supervisión de las reservas y la disponibilidad de mesas.",
+      "core_capabilities": [
+        "Sistema de reservas en línea para clientes con selección de fecha, hora y tipo de mesa.",
+        "Panel administrativo para la gestión de reservas y estados de mesas en tiempo real.",
+        "Visualización de disponibilidad de mesas actualizada automáticamente.",
+        "Notificaciones automáticas de confirmación y recordatorio de reservas.",
+        "Presentación atractiva del restaurante con información clave.",
+        "Generación de estadísticas básicas sobre reservas y uso de mesas."
+      ],
+      "scope": {
+        "in_scope": [
+          "Página principal del restaurante con información (fotos, horarios, ubicación).",
+          "Módulo de reservas para clientes (selección de fecha, hora, cantidad de personas, tipo de mesa, registro de datos).",
+          "Confirmación de reserva para el cliente.",
+          "Gestión de disponibilidad de mesas en tiempo real.",
+          "Configuración de diferentes tipos de mesas (2 personas, familiar, VIP, terraza).",
+          "Panel administrativo para ver, aprobar/cancelar reservas y cambiar estados de mesas.",
+          "Sistema de notificaciones por correo o WhatsApp para recordatorios de reserva.",
+          "Diseño web moderno, elegante, responsive para móviles y con animaciones suaves.",
+          "Estadísticas simples (horarios con más reservas, mesas más utilizadas, cantidad de clientes por día)."
+        ],
+        "out_of_scope": [
+          "Sistema de pedidos en línea.",
+          "Funcionalidad de pagos desde la web.",
+          "Integración con sistemas de punto de venta (POS) existentes.",
+          "Programas de fidelización de clientes."
+        ],
+        "adjacent_expectations": null
+      },
+      "constraints": {
+        "technical_constraints": [
+          "El sistema debe ser una aplicación web moderna y responsive, optimizada para dispositivos móviles y de escritorio.",
+          "El diseño debe ser elegante, con animaciones suaves y una experiencia de usuario premium.",
+          "La arquitectura del sistema debe ser escalable para permitir futuras integraciones como pedidos y pagos en línea."
+        ],
+        "business_rules": [
+          "La disponibilidad de mesas debe reflejarse en tiempo real para evitar sobre-reservas.",
+          "Las mesas se clasifican por capacidad y ubicación (ej. mesa para 2, familiar, VIP, terraza).",
+          "Toda reserva debe incluir nombre, número de teléfono y correo electrónico del cliente.",
+          "El personal del restaurante tiene la autoridad para aprobar, cancelar o modificar el estado de cualquier reserva.",
+          "Las notificaciones de recordatorio de reserva deben enviarse con una antelación definida (ej. 2 horas antes)."
+        ],
+        "assumptions": [
+          "El restaurante Sabor Andino proporcionará la información detallada de sus mesas (capacidad, tipo, ubicación).",
+          "El personal del restaurante recibirá capacitación para el uso del panel administrativo.",
+          "Se dispondrá de un servicio de envío de correos electrónicos y/o mensajes de WhatsApp para las notificaciones.",
+          "Los clientes tendrán acceso a internet y dispositivos compatibles para realizar sus reservas."
+        ]
+      }
+    },
+    "requirements": null,
+    "class_diagram": null,
+    "traceability": null,
+    "product_created": false,
+    "requirements_created": false,
+    "design_created": false,
+    "pending_modification": null,
+    "impact_analysis": null,
+    "skip_impact": false,
+    "phase": "",
+    "mode": "",
+    "error": null,
+    "response": null
+  },
+  "pending_state": null,
+  "pending_new_model": null,
+  "pending_quality_report": null,
+  "pending_phase": null
+}

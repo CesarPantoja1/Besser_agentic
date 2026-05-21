@@ -1,6 +1,7 @@
 import React from 'react';
-import { FolderKanban } from 'lucide-react';
+import { FolderKanban, Sparkles } from 'lucide-react';
 import { Input } from '@/components/ui/input';
+import { Button } from '@/components/ui/button';
 import { CommunityMenu } from './menus/CommunityMenu';
 import { DeployMenu } from './menus/DeployMenu';
 import { FileMenu } from './menus/FileMenu';
@@ -52,6 +53,7 @@ const WorkspaceTopBarInner: React.FC<WorkspaceTopBarProps> = ({
   onOpenFeedback,
   onOpenKeyboardShortcuts,
   onShowWelcomeGuide,
+  onOpenSDD,
   activeDiagramType,
   perspectives,
   onSwitchUml,
@@ -132,6 +134,16 @@ const WorkspaceTopBarInner: React.FC<WorkspaceTopBarProps> = ({
             onOpenKeyboardShortcuts={onOpenKeyboardShortcuts}
             onShowWelcomeGuide={onShowWelcomeGuide}
           />
+          <Button
+            variant="outline"
+            className={`gap-2 ${outlineButtonClass} border-brand/35 bg-brand/[0.03] text-brand relative overflow-hidden group hover:bg-brand/[0.08] transition-all duration-300 hover:scale-[1.02] active:scale-95`}
+            onClick={onOpenSDD}
+            title="Software Design Document Framework"
+          >
+            <Sparkles className="size-4 animate-pulse text-brand" />
+            <span className="hidden xl:inline font-bold">Framework SDD</span>
+            <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out" />
+          </Button>
           <TopBarUtilities
             showQualityCheck={showQualityCheck}
             outlineButtonClass={outlineButtonClass}

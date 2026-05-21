@@ -83,3 +83,16 @@ export const toastAutohideDelay = 2000;
 
 // bug report url
 export const bugReportURL = 'https://github.com/BESSER-PEARL/BESSER/issues/new?template=bug-report.md';
+
+// SDD Backend
+export const SDD_BACKEND_URL = import.meta.env.DEV
+  ? 'http://localhost:8000/api'
+  : _env(process.env.SDD_BACKEND_URL, import.meta.env.VITE_SDD_BACKEND_URL);
+
+export const SDD_WS_URL = import.meta.env.DEV
+  ? 'ws://localhost:8000'
+  : _env(process.env.SDD_WS_URL, import.meta.env.VITE_SDD_WS_URL);
+
+// SDD localStorage keys
+export const localStorageSDDConfig = localStoragePrefix + 'sdd_config';
+
