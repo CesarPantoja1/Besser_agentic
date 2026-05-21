@@ -1,0 +1,1498 @@
+{
+  "session_id": "fe35e3e1-e79f-485d-89c5-ab2fab477f58",
+  "config": {
+    "apiKey": "AIzaSyDcRs_vN0r4X0l-0asvFBBtKB5cqb_YdQk",
+    "model": "gemini-2.5-flash",
+    "provider": "gemini",
+    "outputDir": "F:\\SDD-BESSER-agentic\\TEST2"
+  },
+  "sdd_state": {
+    "user_prompt": "",
+    "target_phase": "",
+    "product_brief": {
+      "product_name": "Mesa Andina",
+      "problem_statement": "El actual sistema de reservas por WhatsApp en Sabor Andino es caótico y genera quejas de los clientes debido a su ineficiencia. Los clientes necesitan una forma sencilla y rápida de reservar mesas, mientras que el personal requiere una herramienta para gestionar eficazmente la disponibilidad y ocupación. Esta situación afecta la experiencia del cliente y la eficiencia operativa del restaurante.",
+      "goals_and_objectives": {
+        "primary_objectives": [
+          "Reducir la carga operativa del personal en la gestión de reservas en un 40% en los primeros 3 meses.",
+          "Mejorar la satisfacción del cliente con el proceso de reserva, reflejado en una disminución del 50% en quejas relacionadas.",
+          "Aumentar la tasa de reservas online en un 30% en los primeros 6 meses de implementación.",
+          "Optimizar la ocupación de mesas, incrementando la eficiencia en un 15% durante los fines de semana."
+        ],
+        "success_metrics": [
+          "Porcentaje de reducción de quejas de clientes sobre reservas.",
+          "Número de reservas realizadas a través del sistema web vs. otros canales.",
+          "Tiempo promedio de gestión de una reserva por parte del personal.",
+          "Tasa de ocupación de mesas por tipo y horario.",
+          "Número de usuarios activos en el sistema de reservas."
+        ]
+      },
+      "target_users": "Clientes del restaurante Sabor Andino que desean reservar mesas de forma online. Personal administrativo y de atención al cliente del restaurante encargado de gestionar las reservas y la disponibilidad de mesas.",
+      "core_capabilities": [
+        "Gestión de información pública del restaurante (horarios, ubicación, fotos).",
+        "Sistema de reservas online para clientes con selección de fecha, hora, cantidad de personas y tipo de mesa.",
+        "Panel de administración para la gestión completa de reservas y estados de mesas en tiempo real.",
+        "Sistema de notificaciones automatizadas para clientes y personal.",
+        "Visualización de estadísticas básicas sobre el uso y rendimiento de las reservas.",
+        "Diseño web responsive, moderno y elegante con una experiencia de usuario fluida."
+      ],
+      "scope": {
+        "in_scope": [
+          "Página principal del restaurante con información básica, fotos, horarios y ubicación.",
+          "Módulo de reservas para clientes (selección de fecha, hora, cantidad de personas, tipo de mesa, registro de datos).",
+          "Confirmación de reserva automática para el cliente.",
+          "Actualización automática de la disponibilidad de mesas en función de las reservas.",
+          "Configuración de diferentes tipos de mesas (2 personas, familiar, VIP, terraza).",
+          "Panel administrativo para visualizar, aprobar/cancelar reservas y cambiar estados de mesas.",
+          "Visualización en tiempo real de la ocupación y disponibilidad de mesas para el personal.",
+          "Sistema de notificaciones por correo electrónico y/o WhatsApp para recordatorios de reserva.",
+          "Diseño web moderno, elegante, responsive y con animaciones suaves.",
+          "Módulo de estadísticas básicas (horarios con más reservas, mesas más utilizadas, cantidad de clientes por día)."
+        ],
+        "out_of_scope": [
+          "Sistema de pedidos en línea de alimentos y bebidas.",
+          "Funcionalidad de pagos directos desde la web.",
+          "Integración con sistemas de punto de venta (POS) o inventario existentes.",
+          "Gestión de menú o precios de productos del restaurante."
+        ],
+        "adjacent_expectations": "El sistema requerirá integración con un proveedor de servicios de correo electrónico (SMTP) y una API de WhatsApp para el envío de notificaciones."
+      },
+      "constraints": {
+        "technical_constraints": [
+          "El sistema debe ser una aplicación web moderna y responsive, optimizada para dispositivos móviles y de escritorio.",
+          "La interfaz de usuario debe ser elegante, intuitiva y con animaciones suaves para una experiencia premium.",
+          "La arquitectura del sistema debe ser escalable para permitir futuras expansiones como pedidos en línea y pagos.",
+          "Compatibilidad con los navegadores web más recientes (Chrome, Firefox, Safari, Edge)."
+        ],
+        "business_rules": [
+          "Una mesa solo puede ser reservada por un único cliente para un horario específico.",
+          "Las reservas deben ser confirmadas por el sistema o aprobadas por el personal para ser válidas.",
+          "La disponibilidad de mesas se determina por el tipo de mesa, su capacidad y el horario solicitado.",
+          "El personal del restaurante tiene la autoridad para modificar el estado de cualquier mesa (libre, ocupada, reservada) en el panel administrativo."
+        ],
+        "assumptions": [
+          "El restaurante proporcionará toda la información necesaria (fotos, horarios de atención, ubicación, descripción, tipos de mesa y sus capacidades).",
+          "Existe una conexión a internet estable y confiable en el restaurante para el uso continuo del panel administrativo.",
+          "Los clientes tienen acceso a dispositivos con conexión a internet para realizar sus reservas.",
+          "El restaurante cuenta con una cuenta de correo electrónico y/o WhatsApp Business para la configuración de las notificaciones."
+        ]
+      }
+    },
+    "requirements": {
+      "introduction": "Este documento detalla los requisitos funcionales para el sistema de reservas online del restaurante Sabor Andino. El objetivo principal es optimizar la gestión de mesas, mejorar la experiencia del cliente y reducir la carga operativa del personal mediante un sistema web moderno y eficiente.",
+      "boundary_context": {
+        "in_scope": [
+          "Página principal del restaurante con información básica, fotos, horarios y ubicación.",
+          "Módulo de reservas para clientes (selección de fecha, hora, cantidad de personas, tipo de mesa, registro de datos).",
+          "Confirmación de reserva automática para el cliente.",
+          "Actualización automática de la disponibilidad de mesas en función de las reservas.",
+          "Configuración de diferentes tipos de mesas (2 personas, familiar, VIP, terraza).",
+          "Panel administrativo para visualizar, aprobar/cancelar reservas y cambiar estados de mesas.",
+          "Visualización en tiempo real de la ocupación y disponibilidad de mesas para el personal.",
+          "Sistema de notificaciones por correo electrónico y/o WhatsApp para recordatorios de reserva.",
+          "Diseño web moderno, elegante, responsive y con animaciones suaves.",
+          "Módulo de estadísticas básicas (horarios con más reservas, mesas más utilizadas, cantidad de clientes por día)."
+        ],
+        "out_of_scope": [
+          "Sistema de pedidos en línea de alimentos y bebidas.",
+          "Funcionalidad de pagos directos desde la web.",
+          "Integración con sistemas de punto de venta (POS) o inventario existentes.",
+          "Gestión de menú o precios de productos del restaurante."
+        ],
+        "adjacent_expectations": "El restaurante proporcionará toda la información necesaria (fotos, horarios de atención, ubicación, descripción, tipos de mesa y sus capacidades). El restaurante cuenta con una cuenta de correo electrónico y/o WhatsApp Business para la configuración de las notificaciones."
+      },
+      "functional_requirements": [
+        {
+          "id": "1",
+          "title": "Visualización de Información Pública del Restaurante",
+          "objective": {
+            "role": "Cliente del restaurante",
+            "capability": "ver la información pública del restaurante",
+            "benefit": "tomar decisiones informadas antes de realizar una reserva"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "1.1",
+              "pattern": "cuando",
+              "condition": "un Cliente accede a la página principal",
+              "subject": "SistemaWeb",
+              "response": "debe mostrar los horarios de atención actualizados"
+            },
+            {
+              "id": "1.2",
+              "pattern": "cuando",
+              "condition": "un Cliente accede a la página principal",
+              "subject": "SistemaWeb",
+              "response": "debe mostrar la ubicación del restaurante"
+            },
+            {
+              "id": "1.3",
+              "pattern": "cuando",
+              "condition": "un Cliente accede a la página principal",
+              "subject": "SistemaWeb",
+              "response": "debe mostrar fotos del restaurante"
+            }
+          ],
+          "priority": "must",
+          "derived_from_capability": "Gestión de información pública del restaurante (horarios, ubicación, fotos)."
+        },
+        {
+          "id": "2",
+          "title": "Realización de Reservas Online por Clientes",
+          "objective": {
+            "role": "Cliente del restaurante",
+            "capability": "seleccionar una fecha, hora, cantidad de personas y tipo de mesa para mi reserva",
+            "benefit": "reservar una mesa fácilmente según mis preferencias"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "2.1",
+              "pattern": "cuando",
+              "condition": "un Cliente selecciona una fecha, hora y cantidad de personas",
+              "subject": "SistemaReservas",
+              "response": "debe mostrar los tipos de mesa disponibles con su capacidad"
+            },
+            {
+              "id": "2.2",
+              "pattern": "cuando",
+              "condition": "un Cliente selecciona un tipo de mesa y envía la solicitud de reserva",
+              "subject": "SistemaReservas",
+              "response": "debe registrar la reserva con los datos proporcionados"
+            },
+            {
+              "id": "2.3",
+              "pattern": "si",
+              "condition": "la mesa seleccionada ya está reservada para el horario específico",
+              "subject": "SistemaReservas",
+              "response": "debe informar al Cliente y sugerir alternativas"
+            },
+            {
+              "id": "2.4",
+              "pattern": "cuando",
+              "condition": "una reserva es registrada",
+              "subject": "SistemaReservas",
+              "response": "debe enviar una confirmación automática al Cliente"
+            },
+            {
+              "id": "2.5",
+              "pattern": "cuando",
+              "condition": "un Cliente selecciona una fecha, hora y cantidad de personas",
+              "subject": "SistemaReservas",
+              "response": "debe determinar la disponibilidad de mesas basándose en el tipo de mesa, su capacidad y el horario solicitado"
+            }
+          ],
+          "priority": "must",
+          "derived_from_capability": "Sistema de reservas online para clientes con selección de fecha, hora, cantidad de personas y tipo de mesa."
+        },
+        {
+          "id": "3",
+          "title": "Gestión de Reservas y Mesas en el Panel Administrativo",
+          "objective": {
+            "role": "Personal administrativo",
+            "capability": "gestionar reservas y estados de mesas en tiempo real",
+            "benefit": "supervisar eficientemente las operaciones del restaurante"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "3.1",
+              "pattern": "cuando",
+              "condition": "el Personal administrativo accede al PanelAdministrativo",
+              "subject": "SistemaAdmin",
+              "response": "debe mostrar una lista de todas las reservas pendientes y confirmadas"
+            },
+            {
+              "id": "3.2",
+              "pattern": "cuando",
+              "condition": "el Personal administrativo selecciona una reserva pendiente",
+              "subject": "SistemaAdmin",
+              "response": "debe permitir aprobar o cancelar la reserva"
+            },
+            {
+              "id": "3.3",
+              "pattern": "cuando",
+              "condition": "el Personal administrativo aprueba una reserva",
+              "subject": "SistemaAdmin",
+              "response": "debe actualizar su estado a \"confirmada\""
+            },
+            {
+              "id": "3.4",
+              "pattern": "cuando",
+              "condition": "el Personal administrativo cancela una reserva",
+              "subject": "SistemaAdmin",
+              "response": "debe actualizar su estado a \"cancelada\""
+            },
+            {
+              "id": "3.5",
+              "pattern": "cuando",
+              "condition": "el Personal administrativo interactúa con el PanelAdministrativo",
+              "subject": "SistemaAdmin",
+              "response": "debe permitir modificar el estado de cualquier mesa (libre, ocupada, reservada)"
+            },
+            {
+              "id": "3.6",
+              "pattern": "mientras",
+              "condition": "el PanelAdministrativo está activo",
+              "subject": "SistemaAdmin",
+              "response": "debe mostrar la ocupación y disponibilidad de mesas en tiempo real"
+            }
+          ],
+          "priority": "must",
+          "derived_from_capability": "Panel de administración para la gestión completa de reservas y estados de mesas en tiempo real."
+        },
+        {
+          "id": "4",
+          "title": "Sistema de Notificaciones Automatizadas",
+          "objective": {
+            "role": "Cliente del restaurante",
+            "capability": "recibir notificaciones automatizadas sobre mi reserva",
+            "benefit": "estar siempre informado y recordado"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "4.1",
+              "pattern": "cuando",
+              "condition": "una reserva es confirmada",
+              "subject": "SistemaNotificaciones",
+              "response": "debe enviar un correo electrónico y/o mensaje de WhatsApp al Cliente con los detalles de la reserva"
+            },
+            {
+              "id": "4.2",
+              "pattern": "cuando",
+              "condition": "una reserva es cancelada por el personal",
+              "subject": "SistemaNotificaciones",
+              "response": "debe enviar un correo electrónico y/o mensaje de WhatsApp al Cliente informando la cancelación"
+            },
+            {
+              "id": "4.3",
+              "pattern": "cuando",
+              "condition": "se acerca la hora de una reserva (ej. 2 horas antes)",
+              "subject": "SistemaNotificaciones",
+              "response": "debe enviar un recordatorio al Cliente por correo electrónico y/o mensaje de WhatsApp"
+            },
+            {
+              "id": "4.4",
+              "pattern": "cuando",
+              "condition": "una nueva reserva pendiente es recibida",
+              "subject": "SistemaNotificaciones",
+              "response": "debe alertar al Personal administrativo"
+            }
+          ],
+          "priority": "must",
+          "derived_from_capability": "Sistema de notificaciones automatizadas para clientes y personal."
+        },
+        {
+          "id": "5",
+          "title": "Visualización de Estadísticas de Reservas",
+          "objective": {
+            "role": "Personal administrativo",
+            "capability": "ver estadísticas básicas sobre el uso y rendimiento de las reservas",
+            "benefit": "tomar decisiones basadas en datos para optimizar la ocupación de mesas"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "5.1",
+              "pattern": "donde",
+              "condition": "el PanelAdministrativo está activo",
+              "subject": "SistemaEstadisticas",
+              "response": "debe mostrar los horarios con mayor cantidad de reservas"
+            },
+            {
+              "id": "5.2",
+              "pattern": "donde",
+              "condition": "el PanelAdministrativo está activo",
+              "subject": "SistemaEstadisticas",
+              "response": "debe mostrar las mesas más utilizadas"
+            },
+            {
+              "id": "5.3",
+              "pattern": "donde",
+              "condition": "el PanelAdministrativo está activo",
+              "subject": "SistemaEstadisticas",
+              "response": "debe mostrar la cantidad de clientes por día"
+            }
+          ],
+          "priority": "should",
+          "derived_from_capability": "Visualización de estadísticas básicas sobre el uso y rendimiento de las reservas."
+        },
+        {
+          "id": "6",
+          "title": "Experiencia de Usuario y Diseño Web Responsive",
+          "objective": {
+            "role": "Cliente del restaurante",
+            "capability": "interactuar con un sitio web moderno, elegante y responsive",
+            "benefit": "tener una experiencia de usuario fluida y agradable"
+          },
+          "acceptance_criteria": [
+            {
+              "id": "6.1",
+              "pattern": "siempre",
+              "condition": "el sistema está en uso",
+              "subject": "SistemaWeb",
+              "response": "debe adaptar su interfaz y funcionalidad para una visualización óptima en dispositivos móviles y de escritorio"
+            },
+            {
+              "id": "6.2",
+              "pattern": "siempre",
+              "condition": "el sistema está en uso",
+              "subject": "SistemaWeb",
+              "response": "debe presentar un diseño visual moderno y elegante"
+            },
+            {
+              "id": "6.3",
+              "pattern": "siempre",
+              "condition": "el sistema está en uso",
+              "subject": "SistemaWeb",
+              "response": "debe ofrecer animaciones suaves y transiciones fluidas entre elementos de la interfaz"
+            }
+          ],
+          "priority": "must",
+          "derived_from_capability": "Diseño web responsive, moderno y elegante con una experiencia de usuario fluida."
+        }
+      ],
+      "non_functional_requirements": [
+        "El sistema debe ser una aplicación web moderna y responsive, optimizada para dispositivos móviles y de escritorio.",
+        "La interfaz de usuario debe ser elegante, intuitiva y con animaciones suaves para una experiencia premium.",
+        "La arquitectura del sistema debe ser escalable para permitir futuras expansiones como pedidos en línea y pagos.",
+        "Compatibilidad con los navegadores web más recientes (Chrome, Firefox, Safari, Edge)."
+      ]
+    },
+    "class_diagram": {
+      "systemName": "Sistema de Gestión de Reservas de Restaurante",
+      "classes": [
+        {
+          "className": "Restaurante",
+          "attributes": [
+            {
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "horariosAtencion",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "ubicacion",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "fotos",
+              "type": "List<String>",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "getNombre",
+              "returnType": "String",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getHorariosAtencion",
+              "returnType": "String",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getUbicacion",
+              "returnType": "String",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getFotos",
+              "returnType": "List<String>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "Cliente",
+          "attributes": [
+            {
+              "name": "clienteId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "email",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "telefono",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "crearCliente",
+              "returnType": "Cliente",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "nombre",
+                  "type": "String"
+                },
+                {
+                  "name": "email",
+                  "type": "String"
+                },
+                {
+                  "name": "telefono",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "actualizarInfo",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "nombre",
+                  "type": "String"
+                },
+                {
+                  "name": "email",
+                  "type": "String"
+                },
+                {
+                  "name": "telefono",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "PersonalAdministrativo",
+          "attributes": [
+            {
+              "name": "adminId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "usuario",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "passwordHash",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "autenticar",
+              "returnType": "boolean",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "usuario",
+                  "type": "String"
+                },
+                {
+                  "name": "password",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "TipoMesa",
+          "attributes": [
+            {
+              "name": "tipoMesaId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "nombre",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "capacidadMin",
+              "type": "int",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "capacidadMax",
+              "type": "int",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "getCapacidadMin",
+              "returnType": "int",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getCapacidadMax",
+              "returnType": "int",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "Mesa",
+          "attributes": [
+            {
+              "name": "mesaId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "numeroMesa",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "capacidad",
+              "type": "int",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "estado",
+              "type": "EstadoMesa",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "tipoMesaId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "actualizarEstado",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "nuevoEstado",
+                  "type": "EstadoMesa"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "Reserva",
+          "attributes": [
+            {
+              "name": "reservaId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "fecha",
+              "type": "Date",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "hora",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "cantidadPersonas",
+              "type": "int",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "estado",
+              "type": "EstadoReserva",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "codigoReserva",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "clienteId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "mesaId",
+              "type": "String",
+              "visibility": "private",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [
+            {
+              "name": "actualizarEstado",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "nuevoEstado",
+                  "type": "EstadoReserva"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "obtenerDetalles",
+              "returnType": "String",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "EstadoReserva",
+          "attributes": [
+            {
+              "name": "PENDIENTE",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "CONFIRMADA",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "CANCELADA",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [],
+          "isAbstract": false,
+          "isEnumeration": true
+        },
+        {
+          "className": "EstadoMesa",
+          "attributes": [
+            {
+              "name": "LIBRE",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "OCUPADA",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "RESERVADA",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            },
+            {
+              "name": "MANTENIMIENTO",
+              "type": null,
+              "visibility": "public",
+              "isDerived": false,
+              "defaultValue": null,
+              "isOptional": false
+            }
+          ],
+          "methods": [],
+          "isAbstract": false,
+          "isEnumeration": true
+        },
+        {
+          "className": "SistemaWeb",
+          "attributes": [],
+          "methods": [
+            {
+              "name": "mostrarInfoRestaurante",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "solicitarDisponibilidad",
+              "returnType": "List<TipoMesa>",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "fecha",
+                  "type": "Date"
+                },
+                {
+                  "name": "hora",
+                  "type": "String"
+                },
+                {
+                  "name": "cantidadPersonas",
+                  "type": "int"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "enviarReserva",
+              "returnType": "Reserva",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "fecha",
+                  "type": "Date"
+                },
+                {
+                  "name": "hora",
+                  "type": "String"
+                },
+                {
+                  "name": "cantidadPersonas",
+                  "type": "int"
+                },
+                {
+                  "name": "tipoMesaId",
+                  "type": "String"
+                },
+                {
+                  "name": "cliente",
+                  "type": "Cliente"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "SistemaReservas",
+          "attributes": [],
+          "methods": [
+            {
+              "name": "obtenerTiposMesaDisponibles",
+              "returnType": "List<TipoMesa>",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "fecha",
+                  "type": "Date"
+                },
+                {
+                  "name": "hora",
+                  "type": "String"
+                },
+                {
+                  "name": "cantidadPersonas",
+                  "type": "int"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "registrarReserva",
+              "returnType": "Reserva",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reserva",
+                  "type": "Reserva"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "verificarDisponibilidad",
+              "returnType": "boolean",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "mesaId",
+                  "type": "String"
+                },
+                {
+                  "name": "fecha",
+                  "type": "Date"
+                },
+                {
+                  "name": "hora",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "sugerirAlternativas",
+              "returnType": "List<TipoMesa>",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "fecha",
+                  "type": "Date"
+                },
+                {
+                  "name": "hora",
+                  "type": "String"
+                },
+                {
+                  "name": "cantidadPersonas",
+                  "type": "int"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "confirmarReserva",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reservaId",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "cancelarReserva",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reservaId",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "SistemaAdmin",
+          "attributes": [],
+          "methods": [
+            {
+              "name": "obtenerTodasReservas",
+              "returnType": "List<Reserva>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "aprobarReserva",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reservaId",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "cancelarReserva",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reservaId",
+                  "type": "String"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "modificarEstadoMesa",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "mesaId",
+                  "type": "String"
+                },
+                {
+                  "name": "nuevoEstado",
+                  "type": "EstadoMesa"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "obtenerOcupacionMesas",
+              "returnType": "Map<String, EstadoMesa>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "SistemaNotificaciones",
+          "attributes": [],
+          "methods": [
+            {
+              "name": "enviarConfirmacion",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reserva",
+                  "type": "Reserva"
+                },
+                {
+                  "name": "cliente",
+                  "type": "Cliente"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "enviarCancelacion",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reserva",
+                  "type": "Reserva"
+                },
+                {
+                  "name": "cliente",
+                  "type": "Cliente"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "enviarRecordatorio",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reserva",
+                  "type": "Reserva"
+                },
+                {
+                  "name": "cliente",
+                  "type": "Cliente"
+                }
+              ],
+              "isAbstract": false
+            },
+            {
+              "name": "alertarNuevaReserva",
+              "returnType": "void",
+              "visibility": "public",
+              "parameters": [
+                {
+                  "name": "reserva",
+                  "type": "Reserva"
+                },
+                {
+                  "name": "personal",
+                  "type": "PersonalAdministrativo"
+                }
+              ],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        },
+        {
+          "className": "SistemaEstadisticas",
+          "attributes": [],
+          "methods": [
+            {
+              "name": "getHorariosMasReservados",
+              "returnType": "List<String>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getMesasMasUtilizadas",
+              "returnType": "List<String>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            },
+            {
+              "name": "getCantidadClientesPorDia",
+              "returnType": "Map<Date, int>",
+              "visibility": "public",
+              "parameters": [],
+              "isAbstract": false
+            }
+          ],
+          "isAbstract": false,
+          "isEnumeration": false
+        }
+      ],
+      "relationships": [
+        {
+          "type": "Association",
+          "source": "SistemaWeb",
+          "target": "Restaurante",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "muestra"
+        },
+        {
+          "type": "Association",
+          "source": "SistemaWeb",
+          "target": "SistemaReservas",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "utiliza"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaReservas",
+          "target": "Reserva",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "gestiona"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaReservas",
+          "target": "Mesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "consulta"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaReservas",
+          "target": "TipoMesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "utiliza"
+        },
+        {
+          "type": "Dependency",
+          "source": "SistemaReservas",
+          "target": "SistemaNotificaciones",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "*",
+          "name": "notifica"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaAdmin",
+          "target": "Reserva",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "gestiona"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaAdmin",
+          "target": "Mesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "gestiona"
+        },
+        {
+          "type": "Dependency",
+          "source": "SistemaAdmin",
+          "target": "SistemaNotificaciones",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "*",
+          "name": "notifica"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaAdmin",
+          "target": "SistemaEstadisticas",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "muestra"
+        },
+        {
+          "type": "Association",
+          "source": "Reserva",
+          "target": "Cliente",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "realizadaPor"
+        },
+        {
+          "type": "Association",
+          "source": "Reserva",
+          "target": "Mesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "paraMesa"
+        },
+        {
+          "type": "Association",
+          "source": "Mesa",
+          "target": "TipoMesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "esDeTipo"
+        },
+        {
+          "type": "Association",
+          "source": "Mesa",
+          "target": "EstadoMesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "tieneEstado"
+        },
+        {
+          "type": "Association",
+          "source": "Reserva",
+          "target": "EstadoReserva",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "1",
+          "name": "tieneEstado"
+        },
+        {
+          "type": "Dependency",
+          "source": "SistemaNotificaciones",
+          "target": "Reserva",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "*",
+          "name": "usa"
+        },
+        {
+          "type": "Dependency",
+          "source": "SistemaNotificaciones",
+          "target": "Cliente",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "*",
+          "name": "usa"
+        },
+        {
+          "type": "Dependency",
+          "source": "SistemaNotificaciones",
+          "target": "PersonalAdministrativo",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "*",
+          "name": "usa"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaEstadisticas",
+          "target": "Reserva",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "analiza"
+        },
+        {
+          "type": "Aggregation",
+          "source": "SistemaEstadisticas",
+          "target": "Mesa",
+          "sourceMultiplicity": "1",
+          "targetMultiplicity": "0..*",
+          "name": "analiza"
+        }
+      ]
+    },
+    "traceability": [
+      {
+        "class_name": "Restaurante",
+        "requirement_ids": [
+          "1.1",
+          "1.2",
+          "1.3"
+        ]
+      },
+      {
+        "class_name": "Cliente",
+        "requirement_ids": [
+          "2.2",
+          "2.4",
+          "4.1",
+          "4.2",
+          "4.3"
+        ]
+      },
+      {
+        "class_name": "PersonalAdministrativo",
+        "requirement_ids": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "4.4"
+        ]
+      },
+      {
+        "class_name": "TipoMesa",
+        "requirement_ids": [
+          "2.1",
+          "2.5"
+        ]
+      },
+      {
+        "class_name": "Mesa",
+        "requirement_ids": [
+          "2.1",
+          "2.3",
+          "2.5",
+          "3.5",
+          "3.6",
+          "5.2"
+        ]
+      },
+      {
+        "class_name": "Reserva",
+        "requirement_ids": [
+          "2.2",
+          "2.3",
+          "2.4",
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4",
+          "5.1",
+          "5.3"
+        ]
+      },
+      {
+        "class_name": "EstadoReserva",
+        "requirement_ids": [
+          "2.2",
+          "3.3",
+          "3.4"
+        ]
+      },
+      {
+        "class_name": "EstadoMesa",
+        "requirement_ids": [
+          "3.5",
+          "3.6"
+        ]
+      },
+      {
+        "class_name": "SistemaWeb",
+        "requirement_ids": [
+          "1.1",
+          "1.2",
+          "1.3",
+          "2.1",
+          "2.2",
+          "6.1",
+          "6.2",
+          "6.3"
+        ]
+      },
+      {
+        "class_name": "SistemaReservas",
+        "requirement_ids": [
+          "2.1",
+          "2.2",
+          "2.3",
+          "2.4",
+          "2.5",
+          "3.3",
+          "3.4"
+        ]
+      },
+      {
+        "class_name": "SistemaAdmin",
+        "requirement_ids": [
+          "3.1",
+          "3.2",
+          "3.3",
+          "3.4",
+          "3.5",
+          "3.6",
+          "5.1",
+          "5.2",
+          "5.3"
+        ]
+      },
+      {
+        "class_name": "SistemaNotificaciones",
+        "requirement_ids": [
+          "2.4",
+          "4.1",
+          "4.2",
+          "4.3",
+          "4.4"
+        ]
+      },
+      {
+        "class_name": "SistemaEstadisticas",
+        "requirement_ids": [
+          "5.1",
+          "5.2",
+          "5.3"
+        ]
+      }
+    ],
+    "product_created": true,
+    "requirements_created": true,
+    "design_created": true,
+    "pending_modification": null,
+    "impact_analysis": null,
+    "skip_impact": false,
+    "phase": "",
+    "mode": "",
+    "error": null,
+    "response": null
+  },
+  "pending_state": null,
+  "pending_new_model": null,
+  "pending_quality_report": null,
+  "pending_phase": null
+}

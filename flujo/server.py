@@ -444,7 +444,7 @@ async def get_session_state(session_id: str):
     # Extract markdowns and layouts to resume cleanly on reload
     product_md, product_data, _ = _extract_spec_data("product", sdd_state)
     reqs_md, reqs_data, _ = _extract_spec_data("requirements", sdd_state)
-    design_data, _, design_layout = _extract_spec_data("design", sdd_state)
+    _, design_data, design_layout = _extract_spec_data("design", sdd_state)
     
     return {
         "sessionId": session_id,
