@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Sparkles, Edit2, ClipboardList } from 'lucide-react';
+import { Sparkles, ClipboardList } from 'lucide-react';
 import { MarkdownRenderer } from './MarkdownRenderer';
 import { MarkdownEditor } from './MarkdownEditor';
 
@@ -51,7 +51,7 @@ export const SDDRequirementsView: React.FC<SDDRequirementsViewProps> = ({
     );
   }
 
-  // Editing mode — use the full MarkdownEditor with live preview
+  // Editing mode — WYSIWYG inline editor (Notion-style)
   if (isEditing) {
     return (
       <div className="h-full">
@@ -64,26 +64,28 @@ export const SDDRequirementsView: React.FC<SDDRequirementsViewProps> = ({
     );
   }
 
-  // Active SPEC state (Created) — rendered markdown view
+  // Read-only rendered view — click to enter editing mode
   return (
-    <div className="flex flex-col h-full max-w-4xl mx-auto p-6 animate-fade-in">
-      <div className="flex items-center justify-between border-b border-border/40 pb-4 mb-6">
+    <div className="flex flex-col h-full animate-fade-in">
+      {/* Header bar */}
+      <div className="flex items-center justify-between px-6 py-3 border-b border-border/40 flex-shrink-0">
         <div className="flex items-center gap-2">
-          <ClipboardList className="size-5 text-brand" />
-          <h2 className="text-lg font-bold text-foreground">Especificación de Requisitos EARS</h2>
+          <ClipboardList className="size-4.5 text-brand" />
+          <h2 className="text-base font-bold text-foreground">Especificación de Requisitos EARS</h2>
         </div>
-
-        <button
-          onClick={() => setIsEditing(true)}
-          className="flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg border border-brand/20 bg-brand/[0.03] text-brand hover:bg-brand/[0.08] transition-colors"
-        >
-          <Edit2 className="size-3.5" />
-          Editar Manualmente
-        </button>
       </div>
 
-      <div className="flex-1 overflow-y-auto pr-2">
-        <MarkdownRenderer content={requirementsMarkdown || ''} />
+      {/* Clickable content area — click anywhere to start editing */}
+      <div
+        className="flex-1 overflow-y-auto cursor-text group"
+        onClick={() => setIsEditing(true)}
+        title="Haz clic para editar"
+      >
+        <div className="max-w-4xl mx-auto px-8 py-6 relative">
+          {/* Subtle hover hint */}
+          <div className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:border-brand/10 transition-colors pointer-events-none" />
+          <MarkdownRenderer content={requirementsMarkdown || ''} />
+        </div>
       </div>
     </div>
   );

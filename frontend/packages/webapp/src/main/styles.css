@@ -406,3 +406,188 @@ select {
     transform: translateY(0);
   }
 }
+
+/* ================================================================
+   SDD WYSIWYG Markdown Editor — contentEditable styles
+   ================================================================ */
+
+.sdd-wysiwyg-editor {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.sdd-wysiwyg-editor:empty::before {
+  content: 'Haz clic aquí y comienza a escribir...';
+  color: hsl(var(--muted-foreground) / 0.4);
+  pointer-events: none;
+}
+
+/* Headings */
+.sdd-wysiwyg-editor h1 {
+  font-size: 1.65rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border) / 0.4);
+  padding-bottom: 0.6rem;
+  margin: 2rem 0 1.25rem 0;
+}
+.sdd-wysiwyg-editor h1:first-child { margin-top: 0; }
+
+.sdd-wysiwyg-editor h2 {
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border) / 0.2);
+  padding-bottom: 0.4rem;
+  margin: 1.75rem 0 1rem 0;
+}
+
+.sdd-wysiwyg-editor h3 {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: hsl(var(--foreground));
+  margin: 1.25rem 0 0.75rem 0;
+}
+
+.sdd-wysiwyg-editor h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: hsl(var(--foreground));
+  margin: 1rem 0 0.5rem 0;
+}
+
+/* Paragraphs */
+.sdd-wysiwyg-editor p {
+  margin: 0.75rem 0;
+  line-height: 1.7;
+  color: hsl(var(--foreground) / 0.85);
+}
+
+/* Bold, Italic, Strikethrough */
+.sdd-wysiwyg-editor strong,
+.sdd-wysiwyg-editor b {
+  font-weight: 700;
+  color: hsl(var(--foreground));
+}
+
+.sdd-wysiwyg-editor em,
+.sdd-wysiwyg-editor i {
+  font-style: italic;
+  color: hsl(var(--foreground) / 0.9);
+}
+
+.sdd-wysiwyg-editor del,
+.sdd-wysiwyg-editor s {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+/* Inline code */
+.sdd-wysiwyg-editor code {
+  padding: 0.15em 0.4em;
+  border-radius: 0.375rem;
+  background: hsl(var(--muted) / 0.8);
+  border: 1px solid hsl(var(--border) / 0.4);
+  font-size: 0.8em;
+  font-family: 'JetBrains Mono', 'Fira Code', ui-monospace, monospace;
+  color: hsl(var(--brand, 239 84% 67%));
+  font-weight: 500;
+}
+
+/* Code blocks */
+.sdd-wysiwyg-editor pre {
+  margin: 1rem 0;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  background: hsl(var(--muted) / 0.5);
+  border: 1px solid hsl(var(--border) / 0.4);
+  overflow-x: auto;
+}
+.sdd-wysiwyg-editor pre code {
+  padding: 0;
+  border: none;
+  background: none;
+  color: hsl(var(--foreground) / 0.85);
+  font-size: 0.8em;
+  line-height: 1.6;
+}
+
+/* Lists */
+.sdd-wysiwyg-editor ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+.sdd-wysiwyg-editor ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+  margin: 0.75rem 0;
+}
+.sdd-wysiwyg-editor li {
+  margin: 0.35rem 0;
+  padding-left: 0.25rem;
+  line-height: 1.6;
+  color: hsl(var(--foreground) / 0.85);
+}
+
+/* Blockquote */
+.sdd-wysiwyg-editor blockquote {
+  border-left: 3px solid hsl(var(--brand, 239 84% 67%) / 0.5);
+  padding: 0.5rem 1rem;
+  margin: 1rem 0;
+  background: hsl(var(--brand, 239 84% 67%) / 0.03);
+  border-radius: 0 0.5rem 0.5rem 0;
+  color: hsl(var(--foreground) / 0.8);
+  font-style: italic;
+}
+
+/* Horizontal rule */
+.sdd-wysiwyg-editor hr {
+  border: none;
+  border-top: 1px solid hsl(var(--border) / 0.3);
+  margin: 1.5rem 0;
+}
+
+/* Links */
+.sdd-wysiwyg-editor a {
+  color: hsl(var(--brand, 239 84% 67%));
+  text-decoration: none;
+  font-weight: 500;
+}
+.sdd-wysiwyg-editor a:hover {
+  text-decoration: underline;
+}
+
+/* Tables */
+.sdd-wysiwyg-editor table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1rem 0;
+  font-size: 0.875rem;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  border: 1px solid hsl(var(--border) / 0.5);
+}
+.sdd-wysiwyg-editor thead {
+  background: hsl(var(--muted) / 0.4);
+}
+.sdd-wysiwyg-editor th {
+  padding: 0.6rem 1rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: hsl(var(--foreground));
+  border-bottom: 1px solid hsl(var(--border) / 0.6);
+}
+.sdd-wysiwyg-editor td {
+  padding: 0.6rem 1rem;
+  color: hsl(var(--foreground) / 0.85);
+  border-bottom: 1px solid hsl(var(--border) / 0.2);
+}
+.sdd-wysiwyg-editor tr:hover td {
+  background: hsl(var(--muted) / 0.2);
+}
+
